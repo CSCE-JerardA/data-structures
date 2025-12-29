@@ -1,46 +1,56 @@
 // JC Austin 2025
-import java.util.Scanner;
 import java.util.Arrays;
 
 
 public class Bubble_Sort {
 
 
-public static void main (){
+public static void main (String[] args){
 
-    int[] array;
+    // Statement that gives our array some data
+    int[] array = {34, 12, 45, 10, 5, 90, 37};
 
     System.out.println("Hello! This is a bubble sort example/demonstration");
 
+    // 
+    System.out.println("The original array: " + Arrays.toString(array));
+
+    // Calls the bubbleSort function/method
     bubbleSort(array);
 
-    System.out.println("Here is your new sorted array");
+    // Message displaying the new code
+    System.out.println("Here is your new sorted array!" + "\nNew array: " + Arrays.toString(array));
 
 }
 
 
-private void bubbleSort(array) {
-    int[] array;
+    private static void bubbleSort(int[] array) {
+        
+        int n = array.length;
 
-    bool swap;
+        boolean swapping;
 
-    for (i = 0; i < n; i++) {
-        swap = false;
+        for (int i = 0; i < n - 1; i++) {
+            swapping = false;
 
-        // Checks if the element or number is greater than the next
-        for (j = 0; j < n - i - 1; j++) {
-            if (array[j] > array[j + 1]) {
+            
+            for (int j = 0; j < n - i - 1; j++) {
+                // Checks if the element or number is greater than the next
+                if (array[j] > array[j + 1]) {
+                    
+                    // Creates the temporary variable swaps
+                    int temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
 
-                [array[j], array[j + 1]] = [array[j + 1], array[j]];
+                    swapping = true;
+                }
+            }
 
-                swap = true;
+            if (!swapping) {
+                break;
             }
         }
-
-        if (!swap) {
-            break;
-        }
     }
-}
 
 }
