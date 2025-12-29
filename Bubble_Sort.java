@@ -12,7 +12,7 @@ public static void main (String[] args){
 
     System.out.println("Hello! This is a bubble sort example/demonstration");
 
-    // 
+    // Message for the original or current code
     System.out.println("The original array: " + Arrays.toString(array));
 
     // Calls the bubbleSort function/method
