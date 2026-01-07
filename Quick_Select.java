@@ -1,12 +1,14 @@
 // Jerard A 2025
 
+import java.util.Arrays;
+
 public class Quick_Select {
     
     public static void main(String[] args) {
         
         int[] dataArr = {23, 34 , 17, 78, 56, 28, 19};
 
-        System.out.println("This is an example/demonstration of the Quick Sort technique");
+        System.out.println("This is an example/demonstration of the Quick Select technique");
 
         System.out.println("Here is the original array!");
         printingArray(dataArr);
@@ -26,12 +28,54 @@ public class Quick_Select {
         System.out.println("");
     }
 
-    private static void quickSelect(int[] array){
+    private static int quickSelect(int[] array, int low, int high, int k){
 
-        int n = array.length;
+        while (low <= high){
+            int pivIndex = partition(array, low, high);
 
-        for (int i = 1; i < n; ++i){
+            if (pivIndex == k){
+                return array[pivIndex];
+            }
 
+            else if (pivIndex > k) {
+                return quickSelect(array, low, pivIndex - 1, k);
+            }
+
+            else{
+                return quickSelect(array, pivIndex + 1, high, k);
+            }
         }
+
+        return -1;
     }
+
+    private static int partition(int[] array, int low, int high){
+
+        int piv = array[high];
+
+        int i = low;
+
+        for (int j = low; j < high; j++){
+            if (array[j] <= piv){
+                swapping(array, i, j);
+                i++;
+            }
+        }
+        swapping(array, i, j);
+        return i;
+
+    }
+
+    public static int select(int[] array, int high, int low, int k){
+        return quickSelect(array, 0, array.length - 1, k - 1);
+    }
+
+    private static void swapping(int[] array, int i, int j) {
+
+        int temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+
+
 }
