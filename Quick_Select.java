@@ -13,10 +13,12 @@ public class Quick_Select {
         System.out.println("Here is the original array!");
         printingArray(dataArr);
 
-        int final_results = select(dataArr, 0, dataArr.length - 1, k - 1);
+        int final_results = select(dataArr, 0, dataArr.length - 1, k);
 
         System.out.println("Here is your new array!");
         printingArray(dataArr);
+
+        System.out.println("The " + k + "th smallest element in the array is " + final_results);
     }
 
     public static void printingArray(int[] array){
