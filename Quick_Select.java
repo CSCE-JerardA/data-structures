@@ -1,19 +1,19 @@
 // Jerard A 2025
 
-import java.util.Arrays;
-
 public class Quick_Select {
     
     public static void main(String[] args) {
         
-        int[] dataArr = {23, 34 , 17, 78, 56, 28, 19};
+        int[] dataArr = {23, 34 , 17, 78, 56, 28, 19, 9 ,89};
+
+        int k = 4;
 
         System.out.println("This is an example/demonstration of the Quick Select technique");
 
         System.out.println("Here is the original array!");
         printingArray(dataArr);
 
-        quickSelect(dataArr);
+        int final_results = select(dataArr, 0, dataArr.length - 1, k - 1);
 
         System.out.println("Here is your new array!");
         printingArray(dataArr);
@@ -61,7 +61,7 @@ public class Quick_Select {
                 i++;
             }
         }
-        swapping(array, i, j);
+        swapping(array, i, high);
         return i;
 
     }
