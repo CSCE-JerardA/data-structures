@@ -11,7 +11,10 @@ public class Merge_Sort {
         System.out.println("Here is the original array");
         printArray(numA);
 
-        sorting(numA);
+        merging(numA, left, mid, right);
+        sorting(numA, 0, numA.length - 1);
+        printArray(numA);
+
 
 
 
@@ -39,6 +42,37 @@ public class Merge_Sort {
 
 
 
+        int i = 0;
+        int j = 0;
+
+        int k = left;
+
+        while (i < num1 && j < num2) {
+            
+            if (leftA[i] <= rightA[j]) {
+                array[k] = leftA[i];
+                i++;
+            }
+
+            else {
+                array[k] = rightA[j];
+                j++;
+            }
+
+            k++;
+
+            while (i < num1) {
+                array[k] = leftA[i];
+                i++;
+                k++;
+            }
+
+            while (j < num2) {
+                array[k] = rightA[j];
+                j++;
+                k++;
+            }
+        }
 
     }
 
