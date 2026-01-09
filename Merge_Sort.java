@@ -6,20 +6,16 @@ public class Merge_Sort {
     public static void main(String[] args) {
 
         // Array containing the data
-        int[] numA = {21, 32, 47, 84, 65, 59, 25, 19};
+        int[] numA = {34, 17, 24, 56, 18, 94, 73, 20};
 
         System.out.println("Here is the original array");
         printArray(numA);
 
-        merging(numA, left, mid, right);
+        
         sorting(numA, 0, numA.length - 1);
         printArray(numA);
 
-
-
-
-
-        System.out.println("");
+        System.out.println("The array above is the new array!");
 
     }
 
@@ -37,7 +33,7 @@ public class Merge_Sort {
         }
 
         for (int j = 0; j < num2; ++j) {
-            rightA[j] = array[j + mid + 1];
+            rightA[j] = array[mid + 1 + j];
         }
 
 
@@ -60,6 +56,7 @@ public class Merge_Sort {
             }
 
             k++;
+        }
 
             while (i < num1) {
                 array[k] = leftA[i];
@@ -72,7 +69,7 @@ public class Merge_Sort {
                 j++;
                 k++;
             }
-        }
+        
 
     }
 
@@ -95,6 +92,7 @@ public class Merge_Sort {
     // Method for printing/displaying the past and current state of the array 
     public static void printArray(int[] array) {
 
+        int n = array.length;
         for (int i : array){
             System.out.println(i + "");
         }
