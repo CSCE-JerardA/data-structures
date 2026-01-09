@@ -1,4 +1,4 @@
-// Jerard A 2025
+
 
 public class Quick_Select {
     
