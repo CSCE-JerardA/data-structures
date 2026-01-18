@@ -30,4 +30,4 @@ def dfs(graphforDFS, startP):
                               stack.append(neighbor)
 
 
-dfs(graphforDFS, "A")
+print(dfs(graphforDFS, "A"))
