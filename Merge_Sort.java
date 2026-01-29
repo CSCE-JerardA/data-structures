@@ -12,10 +12,11 @@ public class Merge_Sort {
         printArray(numA);
 
         
+        System.out.println("The new array is below!");
         sorting(numA, 0, numA.length - 1);
         printArray(numA);
 
-        System.out.println("The array above is the new array!");
+        
 
     }
 
